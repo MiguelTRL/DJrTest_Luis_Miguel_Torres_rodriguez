@@ -1,0 +1,72 @@
+<div class="col-md-6 offset-md-3">
+    <div class="card">
+        <div class="card-header">
+            <h1>Tasks</h1>
+        </div>
+        <div class="card-body">
+            {{#if works}}
+            <table class="table">
+
+
+
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">eliminar</th>
+                    </tr>
+                </thead>
+
+
+
+                
+                    {{#each works}}
+
+
+
+                    <tbody>
+                        <tr>
+
+                            <td> {{nameWork}}</td>
+                            <td> {{nameDescription}}</td>
+                            <td>
+
+                                <a href="/delete-work/{{@key}}" class="btn btn-danger">Delete</a>
+
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                    
+
+
+
+
+                    
+                    {{/each}}
+
+                    <table class="table"></table>
+                
+                {{else}}
+                <p>No works ... </p>
+                {{/if}}
+        </div>
+        <div class="card-footer">
+            <form action="/newwork" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Nombre de la tarea" class="form-control" autofocus>
+
+                    <textarea type="text" name="description" class="form-control">
+
+                    </textarea>
+                </div>
+
+                <button class="btn btn-primary btn-block">
+                    Registrar tarea
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
