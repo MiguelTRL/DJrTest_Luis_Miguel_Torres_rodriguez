@@ -13,7 +13,10 @@
                     <tr>
                         <th scope="col">Nombre</th>
                         <th scope="col">Descripcion</th>
-                        <th scope="col">eliminar</th>
+                        <th scope="col">Estado </th>
+                        {{!-- <th scope="col">Actualizar</th> --}}
+                        <th scope="col">Eliminar</th>
+
                     </tr>
                 </thead>
 
@@ -29,11 +32,21 @@
 
                             <td> {{nameWork}}</td>
                             <td> {{nameDescription}}</td>
+
+                            
                             <td>
+                                {{status}}
+                            </td>
 
+                            {{!-- <td>
+                                <a href="/update-work/{{@key}}" class="btn btn-primary">Actualizar</a>
+                            </td> --}}
+                              <td>
                                 <a href="/delete-work/{{@key}}" class="btn btn-danger">Delete</a>
+                            </td>
 
-
+                                <td>
+                                <a  href="/complete-work/{{@key}}" class="btn btn-success">Completar</a>
                             </td>
                         </tr>
 

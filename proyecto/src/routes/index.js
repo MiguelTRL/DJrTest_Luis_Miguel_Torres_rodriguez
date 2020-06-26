@@ -29,6 +29,16 @@ router.get('/delete-work/:id',(req,res)=>  {
 
 
 
+router.get('/complete-work/:id',(req,res)=>  {
+
+    db.ref('works/'+ req.params.id).update({
+
+        status : "completada"
+    });
+    res.redirect('/')
+})
+
+
 
     router.post('/newwork',(req,res)=> {
     console.log(req.body)
@@ -36,7 +46,8 @@ router.get('/delete-work/:id',(req,res)=>  {
         const newWork = {
 
             nameWork : req.body.name,
-            nameDescription : req.body.description
+            nameDescription : req.body.description,
+            status: "incompleta"
 
         }
             
